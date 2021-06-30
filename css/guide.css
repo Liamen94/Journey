@@ -1,0 +1,122 @@
+#main {
+    background-image: url("../pictures/ui/bg_guida.png");
+}
+
+#next {
+    background: url("../pictures/ui/next_bttn.png") no-repeat;
+}
+
+#prev {
+    background: url("../pictures/ui/prev_btn.png") no-repeat;
+}
+
+#guide_page {
+    margin-left: 56px;
+}
+
+h1{
+    color: #f2bc52;
+    text-shadow: 0 0 6px #581d2b;
+}
+
+h2, h3, .points{
+    color: #fff;
+    text-shadow: 0 0 6px #000;
+}
+
+h1, h2{
+    text-align: center;
+}
+
+em {
+    font-style: normal;
+    text-decoration: none;
+    text-shadow: 0 0 6px #581d2b;
+    color: #e67356;
+}
+
+#comandi {
+    display: block;
+    margin: auto;
+}
+
+#items{
+    margin: 7px;
+}
+
+.row {
+    padding-top: 7px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+  
+.column{
+    width: 200px;
+    display: flex;
+    align-items: center;
+}
+
+.description {
+    color: #581d2b;
+    display: inline;
+    font-size: 8px;
+    margin-left: 2px;
+    line-height: 10px;
+}
+
+.info {
+    border: 16px solid transparent;
+    border-image: url("../pictures/ui/border_internal.png") 16 fill;
+    background-clip: padding-box;
+}
+
+.life{
+    text-shadow: 1px 1px black, -1px 1px black, 1px -1px black, -1px -1px black, 0 0 3px peachpuff;
+    color: red;
+    text-align: center;
+    font-weight: 900;
+}
+
+
+#goals {
+    width: 400px;
+    margin: auto;
+    line-height: 28px;
+}
+
+#enemies {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#goblin {
+    width: 64px;
+    height: 64px;
+    animation: walk .8s steps(2) infinite;
+    background-image: url("../pictures/ui/goblin.png");
+    margin: auto;
+ }
+
+ #mummy {
+    width: 64px;
+    height: 64px;
+    animation: walk .8s steps(2) infinite;
+    background-image: url("../pictures/ui/mummy.png");
+    margin: auto;
+ }
+
+ #dragon {
+    width: 64px;
+    height: 64px;
+    animation: walk .8s steps(2) infinite;
+    background-image: url("../pictures/ui/dragon.png");
+    margin: auto;
+ }
+
+@keyframes walk{
+      from{background-position-x:0px;}
+      to{background-position-x:128px;}
+}

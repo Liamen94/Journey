@@ -1,0 +1,37 @@
+#title {
+    display: block;
+    width: 30%;
+    height: 30%;
+    margin: auto;
+    margin-top: 28px;
+}
+
+#main {
+    background-image: url("../pictures/ui/bg.png");
+}
+
+#main_menu{
+    margin-top: 100px;
+    display: block;
+    text-align: center;
+    list-style: none;
+    padding: 0px;
+}
+
+#main_menu li {
+    height: 70px;
+    margin-bottom: 0px;
+    font-size: 28px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-shadow: 0 0 4px #ff7300;
+    color: #fad72c;
+    padding-bottom: 3px;
+    padding-left: 15px;
+}

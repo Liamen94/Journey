@@ -1,0 +1,43 @@
+@font-face {
+    font-family: "dogica";
+    src: url(../fonts/dogica.ttf);
+}
+
+body {
+    background-image: url("../pictures/ui/bg_tiled.png");
+    font-family: "dogica";
+    display: flex;
+    justify-content: center;
+    margin-top: 64px;
+}
+
+#main {
+    width: 750px;
+    height: 750px;
+    border: 16px solid transparent;
+    border-image: url("../pictures/ui/border.png") 16 round;
+    background-clip: padding-box;
+}
+
+#back {
+    background: url("../pictures/ui/back_btn.png") no-repeat;  
+}
+
+form{
+    position: absolute;
+    display: inline;
+}
+
+input {
+    background-size: 44px 44px;
+    border: none;
+    height: 44px;
+    width: 44px;
+    margin-top: 6px;
+    margin-left: 6px;
+}
+
+input:hover {
+    margin-top: 5px;
+    margin-bottom: 1px;
+}

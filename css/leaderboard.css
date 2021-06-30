@@ -1,0 +1,28 @@
+#main {
+    background-image: url("../pictures/ui/board_bg.png");
+}
+
+th, td{
+    border: 16px solid transparent;
+    border-image: url("../pictures/ui/border_table.png") 16 fill;
+    border-collapse: none;
+    line-height: 16px;
+  }
+
+h1{
+    margin-top: 50px;
+    text-align: center;
+    color: #eadee9;
+    text-shadow: 0 0 6px #581d2b;
+    line-height: 40px;
+    
+}
+
+#board {
+    display: flex;
+    justify-content: center;
+}
+
+td {
+    text-align: center;
+}

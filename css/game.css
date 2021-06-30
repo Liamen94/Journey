@@ -1,0 +1,148 @@
+#main {
+    background-image: url("../pictures/ui/bg_game.png");
+}
+
+#game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 750px;
+}
+
+#stage {
+    position: relative;
+    background-image: url("../pictures/level/stage.png");
+    width: 512px;
+    height: 512px;
+}
+
+#hud{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 512px;
+    height: 48px;
+    background-color: #2b4d44;
+}
+
+#lives{
+    display: flex;
+    align-items: center;
+}
+
+#player {
+    background-image: url("../pictures/characters/player_idle.png");
+    position: absolute;
+    top: 256px;
+    left: 256px;
+    width: 32px;
+    height: 32px;
+    z-index: 4;
+}
+
+#dialog {
+    border: 16px solid transparent;
+    border-image: url("../pictures/ui/border_internal.png") 16 fill;
+    height: 44px;
+    width: 480px;
+    text-align: center;
+    line-height: 32px;
+    display: none;
+}
+
+#prompt{
+    border: 16px solid transparent;
+    border-image: url("../pictures/ui/border_internal.png") 16 fill;
+    position: absolute;
+    height: 100px;
+    width: 416px;
+    top: 190px;
+    left: 32px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 5;
+}
+
+#prompt_text{
+    position: relative;
+    display: block;
+    margin: 0;
+}
+
+#board_form{
+    position: relative;
+}
+
+#name_set:hover{
+    margin: 0;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+input:invalid {
+    box-shadow: none;
+}
+
+#name_set{
+    position: relative;
+    display:block;
+    width: 72px;
+    height: 32px;
+    font-family: "dogica";
+    background-color: rgba(0,0,0,0.1);
+    font-size: 24px;
+    margin: 0; 
+}
+
+.ui {
+    color: #eadee9;
+}
+
+.pickup {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    animation: blink .5s linear infinite;
+    animation-delay: 7s;
+    z-index: 2;
+}
+
+.monster {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    animation: walk .8s steps(2) infinite;
+    z-index: 3;
+}
+
+.bullet {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-image: url("../pictures/characters/bullet.png");
+}
+
+.blink{
+    animation: blink .2s linear infinite;
+}
+
+.move {
+    animation: walk .8s steps(2) infinite;
+}
+
+@keyframes blink {  
+    50% { opacity: 0; }
+  }
+
+
+@keyframes walk{
+    from{background-position-x:0px;}
+    to{background-position-x:64px;}
+}
