@@ -59,7 +59,7 @@ function pickup(id, pickupX, pickupY){
     this.on_pickup = function(){
         set_score(this.score);
         if(this.id == 3) {
-            playerLife++;
+            player_life++;
         }
         if(this.id > 4) {
             playerEquip = this.id;

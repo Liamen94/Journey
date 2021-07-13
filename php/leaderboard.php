@@ -24,7 +24,17 @@
                 </thead>
                 <tbody>
         <?php
-            include("mysql.php");
+            $host = "localhost";
+            $user = "root";
+            $password = "";
+            $database = "board";
+            $sqlDB =  new mysqli($host, $user, $password, $database);
+            if ($sqlDB->connect_error) {
+                die('Errore di connessione (' . $sqlDB->connect_errno . ') '
+                . $sqlDB->connect_error);
+                }
+                $sqlDB->select_db($database) or
+                die ('Impossibile usare il database: ' . mysql_error());
             $query = "CREATE TABLE  `board`.`leaderboard` (
                 `id` INT NOT NULL AUTO_INCREMENT ,
                  `player` varchar(10) NOT NULL DEFAULT 'AAA', 

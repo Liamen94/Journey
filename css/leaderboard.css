@@ -6,7 +6,6 @@ th, td{
     border: 16px solid transparent;
     border-image: url("../pictures/ui/border_table.png") 16 fill;
     border-collapse: none;
-    line-height: 16px;
   }
 
 h1{
@@ -14,7 +13,6 @@ h1{
     text-align: center;
     color: #eadee9;
     text-shadow: 0 0 6px #581d2b;
-    line-height: 40px;
     
 }
 

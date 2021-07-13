@@ -1,17 +1,15 @@
 var scoreBackup;
 
-var input = document.getElementById("name_set");
-input.addEventListener("invalid", function(e){e.preventDefault();});
-
-function set_life_text(playerLife){
+function set_life_text(player_life){
     var counter = document.getElementById("count");
-    playerLife = (playerLife > 9) ? 9 : playerLife;
-    counter.textContent = playerLife;
+    counter.textContent = player_life;
 }
 
 function set_score(newScore){
     playerScore += newScore;
-    playerScore = (playerScore > 999999) ? 999999 : playerScore;
+    if(playerScore >= 999999){
+        playerScore = 999999;
+    }
     var scoreText = document.getElementById("score");
     if(Number.isNaN(playerScore)) {
         playerScore = scoreBackup;
@@ -28,9 +26,4 @@ function set_score(newScore){
 function update_ui(type) {
     var activeItem = document.getElementById("item");
     activeItem.src = "../pictures/ui/"+type+".png";
-}
-
-function setDialog(){
-    var message = document.getElementById("dialog");
-    message.textContent = "DEVI INSERIRE 3 LETTERE!"
 }

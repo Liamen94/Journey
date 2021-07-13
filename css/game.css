@@ -39,7 +39,6 @@
     left: 256px;
     width: 32px;
     height: 32px;
-    z-index: 4;
 }
 
 #dialog {
@@ -49,56 +48,7 @@
     width: 480px;
     text-align: center;
     line-height: 32px;
-    display: none;
-}
-
-#prompt{
-    border: 16px solid transparent;
-    border-image: url("../pictures/ui/border_internal.png") 16 fill;
-    position: absolute;
-    height: 100px;
-    width: 416px;
-    top: 190px;
-    left: 32px;
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    z-index: 5;
-}
-
-#prompt_text{
-    position: relative;
-    display: block;
-    margin: 0;
-}
-
-#board_form{
-    position: relative;
-}
-
-#name_set:hover{
-    margin: 0;
-}
-
-input:focus, textarea:focus, select:focus{
-    outline: none;
-}
-
-input:invalid {
-    box-shadow: none;
-}
-
-#name_set{
-    position: relative;
-    display:block;
-    width: 72px;
-    height: 32px;
-    font-family: "dogica";
-    background-color: rgba(0,0,0,0.1);
-    font-size: 24px;
-    margin: 0; 
+    visibility: hidden;
 }
 
 .ui {
@@ -111,7 +61,6 @@ input:invalid {
     height: 32px;
     animation: blink .5s linear infinite;
     animation-delay: 7s;
-    z-index: 2;
 }
 
 .monster {
@@ -119,7 +68,6 @@ input:invalid {
     width: 32px;
     height: 32px;
     animation: walk .8s steps(2) infinite;
-    z-index: 3;
 }
 
 .bullet {
