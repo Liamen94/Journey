@@ -7,14 +7,16 @@
     <link rel="icon" href="../pictures/fav.png">
 </head>
 <body>
+    <?php 
+        include("session_check.php");
+    ?>
     <div id="main">
         <nav>
-            <form action="../index.html">
-                <input id="back" type="submit" value="">
+            <?php include("home_button.php"); ?>
+            <form id="guide_page" action="guide.php">
+                <input id="prev" class="navbutton" type="submit" value="">
             </form>
-            <form id="guide_page" action="guide.html">
-                <input id="prev" type="submit" value="">
-            </form>
+            <?php include("logout_button.php"); ?>
         </nav>
         <h1>Istruzioni <em>1</em>/2</h1>
         <section id="manual">

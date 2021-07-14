@@ -1,15 +1,14 @@
 var scoreBackup;
 
-function set_life_text(player_life){
+function set_life_text(playerLife){
     var counter = document.getElementById("count");
-    counter.textContent = player_life;
+    playerLife = (playerLife > 9) ? 9 : playerLife;
+    counter.textContent = playerLife;
 }
 
 function set_score(newScore){
     playerScore += newScore;
-    if(playerScore >= 999999){
-        playerScore = 999999;
-    }
+    playerScore = (playerScore > 999999) ? 999999 : playerScore;
     var scoreText = document.getElementById("score");
     if(Number.isNaN(playerScore)) {
         playerScore = scoreBackup;

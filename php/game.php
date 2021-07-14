@@ -7,11 +7,15 @@
     <link rel="icon" href="../pictures/fav.png">
 </head>
 <body>
+    <?php 
+        include("session_check.php");
+    ?>
     <div id="main">
         <nav>
-            <form action="../index.html">
-                <input id="back" type="submit" value="">
-            </form>
+            <?php
+                include("home_button.php");
+                include("logout_button.php");
+            ?>
         </nav>
         <div id="game">
             <div id="dialog">Premi i tasti direzionali!</div>
@@ -29,6 +33,15 @@
             </div>
             <div id="stage">
                 <div id="blinker"><div id="player"></div></div>
+                <div id="prompt">
+                    <p id="prompt_text"> Registrare il punteggio?</p>
+                    <form class="board_form" action="javascript:;" onsubmit="ajax_request()" >
+                        <input class ="user_input" type="submit" value="Si">
+                    </form>
+                    <form class="board_form" action="menu.php">
+                        <input class ="user_input" type="submit" value="No">
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -39,6 +52,6 @@
     <script src="../javascript/pickup.js"></script>
     <script src="../javascript/bullet.js"></script>
     <script src="../javascript/game.js"></script>
-    <script src="../javascript/debug.js"></script>
+    <script src="../javascript/ajax.js"></script>
 </body>
 </html>

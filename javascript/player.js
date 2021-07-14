@@ -1,9 +1,9 @@
 
 var player = document.getElementById("player");
-var player_life = 3;
-var coffee_speed = 3;
-var normal_speed = 1.5;
-var player_speed = normal_speed;
+var playerLife = 3;
+var coffeeSpeed = 3;
+var normalSpeed = 1.5;
+var playerSpeed = normalSpeed;
 var playerWidth = 32;
 var playerHeight = 32;
 var playerX = 256;
@@ -18,8 +18,8 @@ var isDead = false;
 
 function player_update(){
     scoreBackup = playerScore;
-    set_life_text(player_life);
-    if (player_life == 0){
+    set_life_text(playerLife);
+    if (playerLife == 0){
         clearInterval(playerClock);
         isDead = true;
         game_over();
@@ -37,14 +37,14 @@ function player_update(){
 
 function player_move(){
     if(xDir!=0 && yDir!=0){
-        playerX += (player_speed/Math.sqrt(2))*xDir;
-        playerY += (player_speed/Math.sqrt(2))*yDir;
+        playerX += (playerSpeed/Math.sqrt(2))*xDir;
+        playerY += (playerSpeed/Math.sqrt(2))*yDir;
     }
     else if(xDir!=0){
-        playerX += player_speed * xDir;
+        playerX += playerSpeed * xDir;
     }
     else if(yDir!=0){
-        playerY += player_speed * yDir;
+        playerY += playerSpeed * yDir;
     }
     player.style.left = playerX + "px";
     player.style.top = playerY + "px";
@@ -61,8 +61,8 @@ function player_use_items(){
                 setTimeout(function() {fireEffect=0}, 8000);
                 break;
             case 6:
-                player_speed = coffee_speed;
-                setTimeout(function() {player_speed = normal_speed}, 10000);
+                playerSpeed = coffeeSpeed;
+                setTimeout(function() {playerSpeed = normalSpeed}, 10000);
             break;
             case 8:
                 fireRate = fireRate/2;

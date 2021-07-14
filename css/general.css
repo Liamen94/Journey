@@ -24,20 +24,38 @@ body {
 }
 
 form{
-    position: absolute;
+    position: relative;
     display: inline;
 }
 
-input {
+.navbutton {
+    position: relative;
     background-size: 44px 44px;
     border: none;
     height: 44px;
     width: 44px;
-    margin-top: 6px;
-    margin-left: 6px;
+    top: 6px;
+    left: 6px;
 }
 
-input:hover {
-    margin-top: 5px;
-    margin-bottom: 1px;
+.navbutton:hover {
+    top: 5px;
+}
+
+#logoff{
+    right: 6px;
+    float: right;
+}
+
+#logout {
+    background: url("../pictures/ui/logout.png") no-repeat; 
+    margin-top: 6px;
+    left: 0px; 
+}
+
+.user_input{
+    font-family: "dogica";
+    border: 16px solid transparent;
+    border-image: url(../pictures/ui/border_internal.png) 16 fill;
+    padding-bottom: 6px;
 }

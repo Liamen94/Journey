@@ -10,9 +10,9 @@
     background: url("../pictures/ui/prev_btn.png") no-repeat;
 }
 
-#guide_page {
+/* #guide_page {
     margin-left: 56px;
-}
+} */
 
 h1{
     color: #f2bc52;
@@ -26,6 +26,14 @@ h2, h3, .points{
 
 h1, h2{
     text-align: center;
+}
+
+h1 {
+    line-height: 32px;
+}
+
+h2 {
+    line-height: 20px;
 }
 
 em {

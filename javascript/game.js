@@ -14,7 +14,7 @@ window.onload = function(){
 function start(){
     player_update();
     pickupClock = setInterval(collect_pickup, fps);
-    enemyClock = setInterval(spawn_monster_on_door, 3000);
+    enemyClock = setInterval(spawn_monster, 3000);
     collisionClock = setInterval(monster_collision, fps);
     if(rightPressed || leftPressed || upPressed || downPressed){
         player.style.backgroundImage = "url(../pictures/characters/player_move.png)";
@@ -39,22 +39,8 @@ function bound_control(x){
     return x;
 }
 
-function roll(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 
 function spawn_monster(){
-    var posX = roll(32,448);
-    var posY = roll(32,448);
-    var id = roll(1,3);
-    var enemy = new monster(id, posX, posY);
-    enemy.spawn();
-}
-
-function spawn_monster_on_door(){
-    
     var spawn = roll(1,2);
     if(spawn = 1){
         var howMany = roll(1,4);
@@ -96,9 +82,7 @@ function spawn_monster_on_door(){
     }
 }
 
-function distance(aPos, bPos){
-    return aPos-bPos;
-}
+
 
 function game_over(){
     clearInterval(pickupClock);
@@ -117,6 +101,19 @@ function game_over(){
         }
     }
     var message = document.getElementById("dialog");
-    message.textContent = "GAME OVER!";
-    message.style.visibility = "visible";
+    var prompt = document.getElementById("prompt");
+    message.textContent = "GAME OVER! " + playerScore + " punti!";
+    message.style.display = "block";
+    prompt.style.display = "flex"; 
+}
+
+
+function distance(aPos, bPos){
+    return aPos-bPos;
+}
+
+function roll(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }

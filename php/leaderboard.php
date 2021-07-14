@@ -7,11 +7,15 @@
     <link rel="icon" href="../pictures/fav.png">
 </head>
 <body>
+    <?php 
+        include("session_check.php");
+    ?>
     <div id="main">
     <nav>
-        <form action="../index.html">
-            <input id="back" type="submit" value="">
-        </form>       
+        <?php 
+            include("home_button.php");
+            include("logout_button.php");
+        ?>     
     </nav>
         <h1>Classifica</h1>
         <div id="board">
@@ -24,18 +28,8 @@
                 </thead>
                 <tbody>
         <?php
-            $host = "localhost";
-            $user = "root";
-            $password = "";
-            $database = "board";
-            $sqlDB =  new mysqli($host, $user, $password, $database);
-            if ($sqlDB->connect_error) {
-                die('Errore di connessione (' . $sqlDB->connect_errno . ') '
-                . $sqlDB->connect_error);
-                }
-                $sqlDB->select_db($database) or
-                die ('Impossibile usare il database: ' . mysql_error());
-            $query = "CREATE TABLE  `board`.`leaderboard` (
+            include("mysql.php");
+            $query = "CREATE TABLE IF NOT EXISTS `board`.`leaderboard` (
                 `id` INT NOT NULL AUTO_INCREMENT ,
                  `player` varchar(10) NOT NULL DEFAULT 'AAA', 
                  `score` INT UNSIGNED NOT NULL,
@@ -44,15 +38,12 @@
             $result = $sqlDB->query($query);
             $query = "SELECT player, score FROM leaderboard ORDER BY score DESC LIMIT 10";
             $result = $sqlDB->query($query);
-            checkResult($result, $query);
-			showResult($result);
-            function checkResult($result, $query)
-                {if (!$result) {
-                $message = 'Invalid query: ' . $mysqli->error . "\n";
+            if (!$result) {
+                $message = 'Invalid query: ' . $sqlDB->error . "\n";
                 $message .= 'Whole query: ' . $query;
                 die($message);
             }
-}
+            showResult($result);
             function showResult($result){ 
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>\n";

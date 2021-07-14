@@ -83,11 +83,13 @@ function damage_player(){
     for(var i=0; i<enemies.length; i++){
         if(Math.abs(playerX-enemies[i].monsterX)<=32 && Math.abs(playerY-enemies[i].monsterY)<=32 && !playerInvincible){
             var invFrame = setTimeout(function() {playerInvincible = false; player.parentNode.classList.remove("blink"); }, 1000);
-            playerInvincible = true;
-            player_life -=1;
-            playerX += (playerX < enemies[i].monsterX) ? -32 : 32;
-            playerY += (playerY < enemies[i].monsterY) ? -32 : 32;
-            player.parentNode.classList.add("blink");
+            if(!playerInvincible){
+                playerInvincible = true;
+                playerLife -=1;
+                player.parentNode.classList.add("blink");
+            }
+            playerX += (playerX < enemies[i].monsterX) ? -16 : 16;
+            playerY += (playerY < enemies[i].monsterY) ? -16 : 16;
         }
     }
 }
@@ -116,10 +118,10 @@ function monster_collision(){
                 var xDistance = Math.abs(distance(enemies[j].monsterX,enemies[i].monsterX))
                 var yDistance = Math.abs(distance(enemies[j].monsterY,enemies[i].monsterY))
                 if(xDistance<=32 && yDistance<=32){
-                    enemies[j].monsterX += (enemies[j].monsterX < enemies[i].monsterX) ? -xDistance/2 : xDistance/2;
-                    enemies[j].monsterY += (enemies[j].monsterY < enemies[i].monsterY) ? -yDistance/2 : yDistance/2;
-                    enemies[i].monsterX += (enemies[i].monsterX < enemies[j].monsterX) ? -xDistance/2 : xDistance/2;
-                    enemies[i].monsterY += (enemies[i].monsterY < enemies[j].monsterY) ? -yDistance/2 : yDistance/2;         
+                    enemies[j].monsterX += (enemies[j].monsterX < enemies[i].monsterX) ? -1 :1;
+                    enemies[j].monsterY += (enemies[j].monsterY < enemies[i].monsterY) ? -1 : 1;
+                    enemies[i].monsterX += (enemies[i].monsterX < enemies[j].monsterX) ? -1 : 1;
+                    enemies[i].monsterY += (enemies[i].monsterY < enemies[j].monsterY) ? -1 : 1;         
               }
           }
         }
